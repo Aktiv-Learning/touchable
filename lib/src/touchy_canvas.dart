@@ -29,6 +29,7 @@ class TouchyCanvas {
   TouchyCanvas(
     BuildContext context,
     this.canvas, {
+    GestureTapDownCallback? defaultOnTapDown,
     ScrollController? scrollController,
     AxisDirection scrollDirection = AxisDirection.down,
   }) {
@@ -198,6 +199,7 @@ class TouchyCanvas {
   void drawPath(
     Path path,
     Paint paint, {
+    List<PathMetric>? pathMetrics,
     HitTestBehavior? hitTestBehavior,
     GestureTapDownCallback? onTapDown,
     PaintingStyle? paintStyleForTouch,
@@ -219,6 +221,7 @@ class TouchyCanvas {
     _shapeHandler.addShape(PathShape(path,
         paint: paint,
         hitTestBehavior: hitTestBehavior,
+        pathMetrics: pathMetrics,
         gestureMap: TouchCanvasUtil.getGestureCallbackMap(
           onTapDown: onTapDown,
           onTapUp: onTapUp,
