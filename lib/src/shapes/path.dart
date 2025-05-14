@@ -21,7 +21,7 @@ class PathShape extends Shape {
   bool isInside(Offset p) {
     if (paint.style == PaintingStyle.stroke) {
       PathMetrics pathMetrics = path.computeMetrics();
-      double touchRange = paint.strokeWidth / 2;
+      double touchRange = paint.strokeWidth / 3;
       // Check if p is within [touchRange] of any point along
       // any of the paths
       for (PathMetric metric in pathMetrics) {
